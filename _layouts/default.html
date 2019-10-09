@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include /me/meta.html %}
+
+    <title>
+      {% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} –
+      {{ site.description }}
+    </title>
+  </head>
+  <body>
+    <!-- Wrapper -->
+    <div class="wrapper top_60 container">
+      <div class="row">
+        {% include /me/profile.html %}
+        <!-- Page Tab Container Div -->
+        <div
+          id="ajax-tab-container"
+          class="col-lg-9 col-md-8 tab-container"
+          data-easytabs="true"
+        >
+          {% include /me/header.html %}
+
+          <div class="row">
+            <!-- Page Content
+    ================================================== -->
+            <div class="col-md-12">
+              <div id="main" role="main" class="panel-container">
+                {{ content }}
+              </div>
+            </div>
+            <!-- col-md-12 end -->
+          </div>
+          <!-- row end -->
+          <!-- Footer
+================================================== -->
+          {% include /me/footer.html %}
+        </div>
+        <!-- Tab Container - End -->
+      </div>
+      <!-- Row - End -->
+    </div>
+    <!-- Wrapper - End -->
+    {% include analytics.html %}
+  </body>
+</html>

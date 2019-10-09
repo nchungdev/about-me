@@ -1,0 +1,68 @@
+<style>
+  .categories,
+  .tags {
+    padding: 0 15px;
+  }
+  .categories h4 {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 0 0 10px 30px;
+    margin-left: -30px;
+    margin-top: 16px;
+    display: inline-block;
+    border-bottom: 1px solid #c00;
+  }
+  .categories ul {
+    text-decoration: none;
+    list-style: none;
+  }
+  .categories a {
+    text-decoration: none;
+    color: #fc0;
+    font-size: 12px;
+    text-decoration: none;
+    transition: all 0.25s;
+  }
+
+  .categories a:hover {
+    color: #f90;
+  }
+
+  .categories h5 {
+    font-size: 16px;
+    padding: 5px 0;
+    margin-left: -16px;
+  }
+</style>
+<div class="col-lg-3 col-md-4">
+  <div class="categories">
+    <h4>Category</h4>
+    <ul class="categories">
+      {% for category in site.categories %}
+      <h5>{{ category[0] }}</h5>
+      <ul>
+        {% for post in category[1] %}
+        <li>
+          <a href="{{ post.url }}">{{ post.title }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+      {% endfor %}
+    </ul>
+    <h4>Tags</h4>
+
+    <ul class="tags">
+      {% for tag in site.tags %}
+      <h5>{{ tag[0] }}</h5>
+      <ul>
+        {% for post in tag[1] %}
+        <li>
+          <a href="{{ post.url }}">{{ post.title }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include /blog/meta.html %}
+    <title></title>
+  </head>
+  <style>
+    body {
+      font: 300 21px Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: #ddd;
+      background-color: #333;
+      -webkit-box-shadow: inset 0 3px 30px rgba(0, 0, 0, 0.3);
+      -moz-box-shadow: inset 0 3px 30px rgba(0, 0, 0, 0.3);
+      box-shadow: inset 0 3px 30px rgba(0, 0, 0, 0.3);
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+      -webkit-font-feature-settings: "kern" 1;
+      -moz-font-feature-settings: "kern" 1;
+      -o-font-feature-settings: "kern" 1;
+      font-feature-settings: "kern" 1;
+      font-kerning: normal;
+      margin: 0;
+    }
+    body p {
+      color: #dddddd;
+    }
+
+    .card-view {
+      min-height: 800px;
+      background-color: #444;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      font-size: 16px;
+    }
+    @media (max-width: 480px) {
+      article ul {
+        padding-left: 20px;
+      }
+    }
+
+    @media (max-width: 568px) {
+      article {
+        margin: 0;
+      }
+    }
+
+    @media (min-width: 768px) {
+      article {
+        padding: 40px 40px 30px;
+        font-size: 21px;
+      }
+    }
+    .post-content {
+      max-width: 978px;
+      margin: 0 auto;
+    }
+  </style>
+  <body>
+    {% include /blog/header.html %}
+
+    <div class="container">
+      <div id="post-content" data-easytabs="true">
+        <div id="main" role="main" class="col-lg-9 col-md-8 card-view">
+          {{ content }}
+        </div>
+        {% include /blog/categories.html %}
+        <!-- row end -->
+        <!-- Footer
+================================================== -->
+        {% include /me/footer.html %}
+      </div>
+    </div>
+  </body>
+</html>
