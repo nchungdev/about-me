@@ -1,10 +1,10 @@
-<!-- Profile Section
-================================================== -->
+
+{% assign profile = site.data.me.profile %}
 <div class="col-lg-3 col-md-4">
   <div class="profile">
     <div class="profile-name">
-      <span class="name">Henry Rooney</span><br />
-      <span class="job">Creative Designer</span>
+      <span class="name">{{ profile.name }}</span><br />
+      <span class="job">{{ profile.job }}</span>
     </div>
     <figure class="profile-image">
       <img
