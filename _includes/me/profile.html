@@ -8,26 +8,26 @@
     </div>
     <figure class="profile-image">
       <img
-        src="http://tavonline.net/html/mat/default/images/profile.jpg"
+        src="{{ profile.avatar }}"
         alt=""
       />
     </figure>
     <ul class="profile-information">
       <li></li>
       <li>
-        <p><span>Name:</span> Chris Johnson</p>
+        <p><span>Name:</span> {{ profile.name }}</p>
       </li>
       <li>
-        <p><span>Birthday:</span> 06 December 1987</p>
+        <p><span>Birthday:</span> {{ profile.birthday }}</p>
       </li>
       <li>
-        <p><span>Job:</span> Freelancer</p>
+        <p><span>Job:</span> {{ profile.job }}</p>
       </li>
       <li>
-        <p><span>Email:</span> henry@domain.com</p>
+        <p><span>Email:</span> {{ profile.email }}</p>
       </li>
       <li>
-        <p><span>Skype:</span> henryrooney85</p>
+        <p><span>Skype:</span> {{ profile.skype }}</p>
       </li>
     </ul>
     <div class="col-md-12">
