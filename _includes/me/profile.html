@@ -24,10 +24,10 @@
         <p><span>Job:</span> {{ profile.job }}</p>
       </li>
       <li>
-        <p><span>Email:</span> {{ profile.email }}</p>
+        <p><span>Email:</span> <a href="mailto:{{ profile.email }}">{{ profile.email }}</a></p>
       </li>
       <li>
-        <p><span>Skype:</span> {{ profile.skype }}</p>
+        <p><span>Skype:</span> <a href="skype:{{ profile.skype }}">{{ profile.skype }}</a></p>
       </li>
     </ul>
     <div class="col-md-12">
