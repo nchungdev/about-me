@@ -1,0 +1,8 @@
+- name: Kotlin
+  percentage: 60%
+- name: Java
+  percentage: 40%
+- name: Android SDK & Android Studio
+  percentage: 40%
+- name: XML
+  percentage: 60%

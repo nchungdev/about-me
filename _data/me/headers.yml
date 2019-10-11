@@ -1,0 +1,19 @@
+"menu":
+  - href: "#about"
+    isHome: true
+  - name: Resume
+    href: "#resume"
+  - name: Portfolio
+    href: "#portfolio"
+  - name: Blog
+    href: "/blog"
+  - name: Contact
+    href: "#contact"
+
+"social":
+  - name: facebook
+    style: fb
+    href: https://www.facebook.com/nchung.dev
+  - name: instagram
+    style: ins
+    href: https://www.instagram.com/nchung.dev/

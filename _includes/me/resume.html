@@ -1,0 +1,53 @@
+<div id="resume">
+  <!-- Resume Section -->
+  <div class="row">
+    <section class="education">
+      <div class="section-title top_30">
+        <span></span>
+        <h2>Resume</h2>
+      </div>
+      <div class="row">
+        <!-- Working History -->
+        <div class="working-history col-md-6 padding_15 padbot_30">
+          <ul class="timeline col-md-12 top_30">
+            <li>
+              <i class="fa fa-suitcase" aria-hidden="true"></i>
+              <h2 class="timeline-title">Working History</h2>
+            </li>
+            <!-- a work -->
+            {% for working in site.data.me.profile.working %}
+            <li>
+              <h3 class="line-title">
+                {{ working.position }} - {{ working.company }}
+              </h3>
+              <span>{{ working.duration }}</span>
+              <p class="little-text">
+                {{ working.description }}
+              </p>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <!-- Education History -->
+        <div class="education-history col-md-6 padding_15 padbot_30">
+          <ul class="timeline col-md-12 top_30">
+            <li>
+              <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+              <h2 class="timeline-title">Education History</h2>
+            </li>
+            <!-- a work -->
+            {% for education in site.data.me.profile.education %}
+            <li>
+              <h3 class="line-title">{{ education.name }}</h3>
+              <span>{{ education.duration }}</span>
+              <p class="little-text">
+                {{ education.description }}
+              </p>
+            </li>
+            {% endfor%}
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+<div id="about" class="active">
+  {% assign about = site.data.me.about %}
+  <!-- Text Section -->
+  <div class="row">
+    <section class="about-me line col-md-12 padding_30 padbot_45">
+      <div class="section-title">
+        <span></span>
+        <h2>About Me</h2>
+      </div>
+      <p class="top_30">
+        {{ about.content }}
+      </p>
+    </section>
+  </div>
+  <!-- My Services Section -->
+  <div class="row">
+    <section class="services line graybg col-md-12 padding_50 padbot_50">
+      <div class="section-title bottom_45">
+        <span></span>
+        <h2>My Services</h2>
+      </div>
+      <div class="row">
+        {% assign services = site.data.me.services %}
+        <!-- a service -->
+        {% for service in services %}
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="service">
+            <div class="icon">
+              <img width="80%" src="{{ service.icon }}" />
+            </div>
+            <span class="title">{{ service.title }}</span>
+            <p class="little-text">
+              {{ service.litle_text }}
+            </p>
+          </div>
+        </div>
+        <!-- a service -->
+        {% endfor %}
+      </div>
+    </section>
+  </div>
+  <!-- Skills Section -->
+  <div class="row">
+    <!-- assign -->
+    {% assign skill = site.data.me.skill %}
+    <section class="design-skills col-md-6 padding_60 padbot_50">
+      <div class="section-title bottom_45">
+        <span></span>
+        <h2>Coding skills</h2>
+      </div>
+      <ul class="skill-list">
+        {% for item in skill %}
+        <li>
+          <h3>{{ item.name }}</h3>
+          <div class="progress">
+            <div class="percentage" style="width:{{ item.percentage }};"></div>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+  </div>
+</div>

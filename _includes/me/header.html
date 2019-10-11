@@ -4,26 +4,25 @@
       <!-- navigation bar -->
       <div class="col-md-8 col-sm-8 col-xs-4">
         <ul class="tabs">
+          {% assign menu = site.data.me.headers.menu %}
+          <!-- ---- -->
+          {% for tab in menu %}
           <li class="tab">
-            <a class="home-btn" href="/"
-              ><i class="fa fa-home" aria-hidden="true"></i
-            ></a>
+            {% if tab.isHome %}
+            <a class="home-btn" href="{{ tab.href }}">
+              <i class="fa fa-home" aria-hidden="true"></i>
+            </a>
+            {% else %}
+            <a href="{{ tab.href }}">{{ tab.name }} </a>
+            {% endif %}
           </li>
-          <li class="tab"><a href="/resume.html" class="">RESUME</a></li>
-          <li class="tab">
-            <a href="/portfolio.html" class="">PORTFOLIO</a>
-          </li>
-          <li class="tab active">
-            <a href="/blog.html" class="active">BLOG</a>
-          </li>
-          <li class="tab">
-            <a href="/contact.html" class="">CONTACT</a>
-          </li>
+          {% endfor %}
         </ul>
       </div>
       <div class="col-md-4 col-sm-4 col-xs-8 dynamic">
+        {% assign info = site.data.me.profile.info %}
         <a
-          href="mailto:hi@tavonline.net"
+          href="mailto:{{ info.email }}"
           class="pull-right site-btn icon hidden-xs"
           >Hire Me <i class="fa fa-paper-plane" aria-hidden="true"></i
         ></a>
@@ -31,40 +30,55 @@
           <i class="fa fa-bars" aria-hidden="true"></i>
         </div>
         <div class="hidden-md social-icons pull-right">
-          <a class="fb" href="#"
-            ><i class="fa fa-facebook" aria-hidden="true"></i
-          ></a>
-          <a class="tw" href="#"
-            ><i class="fa fa-twitter" aria-hidden="true"></i
-          ></a>
-          <a class="ins" href="#"
-            ><i class="fa fa-instagram" aria-hidden="true"></i
-          ></a>
-          <a class="dr" href="#"
-            ><i class="fa fa-dribbble" aria-hidden="true"></i
-          ></a>
+          {% assign socials = site.data.me.headers.social %}
+          <!-- ---- -->
+          {% for social in socials %}
+          <a class="{{ social.style }}" href="{{ social.href }}">
+            <i class="fa fa-{{ social.name }}" aria-hidden="true"></i>
+          </a>
+          {% endfor %}
         </div>
       </div>
     </div>
     <div class="menuout">
       <div class="menuin" style="display: none;">
         <ul class="tabs">
+          {% assign menu = site.data.me.headers.menu %}
+          <!-- ---- -->
+          {% for tab in menu %}
           <li class="tab">
-            <a class="home-btn" href="#home"
-              ><i class="fa fa-home" aria-hidden="true"></i
-            ></a>
+            {% if tab.isHome %}
+            <a class="home-btn" href="{{ tab.href }}">
+              <i class="fa fa-home" aria-hidden="true"></i>
+            </a>
+            {% else %}
+            <a href="{{ tab.href }}">{{ tab.name }} </a>
+            {% endif %}
           </li>
-          <li class="tab"><a href="/resume">RESUME</a></li>
-          <li class="tab"><a href="/portfolio">PORTFOLIO</a></li>
-          <li class="tab"><a href="/blog">BLOG</a></li>
-          <li class="tab"><a href="/contact">CONTACT</a></li>
+          {% endfor %}
         </ul>
       </div>
     </div>
   </nav>
 </header>
 <script>
-  $(".hamburger").click(function(e) {
-    $(".menuin").fadeToggle();
-  });
+  (function setupNavbar() {
+    $(".hamburger").click(function(e) {
+      $(".menuin").slideToggle();
+    });
+    let tab = $("ul.tabs").children("li.tab");
+    tab.click(function(e) {
+      let id = $(this)
+        .children("a")
+        .attr("href");
+      if (id.indexOf("#") == 0) {
+        $("#content")
+          .children("div")
+          .removeClass("active");
+        $(id).addClass("active");
+        tab.removeClass("active");
+        $(this).addClass("active");
+      }
+    });
+  })();
 </script>

@@ -1,33 +1,36 @@
-
-{% assign profile = site.data.me.profile %}
+{% assign info = site.data.me.profile.info %}
 <div class="col-lg-3 col-md-4">
   <div class="profile">
     <div class="profile-name">
-      <span class="name">{{ profile.name }}</span><br />
-      <span class="job">{{ profile.job }}</span>
+      <span class="name">{{ info.name }}</span
+      ><br />
+      <span class="job">{{ info.job }}</span>
     </div>
     <figure class="profile-image">
-      <img
-        src="{{ profile.avatar }}"
-        alt=""
-      />
+      <img src="{{ info.avatar }}" alt="" />
     </figure>
     <ul class="profile-information">
       <li></li>
       <li>
-        <p><span>Name:</span> {{ profile.name }}</p>
+        <p><span>Name:</span> {{ info.name }}</p>
       </li>
       <li>
-        <p><span>Birthday:</span> {{ profile.birthday }}</p>
+        <p><span>Birthday:</span> {{ info.birthday }}</p>
       </li>
       <li>
-        <p><span>Job:</span> {{ profile.job }}</p>
+        <p><span>Job:</span> {{ info.job }}</p>
       </li>
       <li>
-        <p><span>Email:</span> <a href="mailto:{{ profile.email }}">{{ profile.email }}</a></p>
+        <p>
+          <span>Email:</span>
+          <a href="mailto:{{ info.email }}">{{ info.email }}</a>
+        </p>
       </li>
       <li>
-        <p><span>Skype:</span> <a href="skype:{{ profile.skype }}">{{ profile.skype }}</a></p>
+        <p>
+          <span>Skype:</span>
+          <a href="skype:{{ info.skype }}">{{ info.skype }}</a>
+        </p>
       </li>
     </ul>
     <div class="col-md-12">

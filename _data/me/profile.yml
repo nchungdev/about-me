@@ -1,7 +1,24 @@
-name: Chung Nguyen
-birthday: 03 March 1996
-job: Android Developer
-email: nchung.dev@gmail.com
-facebook: m.me/nchung.dev
-skype: live:chuna3396
-avatar: http://tavonline.net/html/mat/default/images/profile.jpg
+"info":
+  name: Chung Nguyen
+  birthday: 03 March 1996
+  job: Android Developer
+  email: nchung.dev@gmail.com
+  skype: live:chuna3396
+  avatar: http://tavonline.net/html/mat/default/images/profile.jpg
+
+"working":
+  - company: Techbase Vietnam
+    position: Android Developer
+    duration: 06/2018 - Present
+    description:
+      Expenses as material breeding insisted building to in. Continual
+      so distrusts pronounce by unwilling listening. Thing do taste on
+      we manor.
+
+"education":
+  - name: Can Tho University
+    duration: 2014 - 2018
+    description: "Expenses as material breeding insisted building to in. Continual so distrusts pronounce by unwilling listening. Thing do taste on we manor."
+  - name: Android Basic | Khoa Pham
+    duration: 8 weeks
+    description: abc
