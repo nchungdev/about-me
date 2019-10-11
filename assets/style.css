@@ -1240,3 +1240,215 @@ ul.timeline {
   max-width: 96px;
   margin-bottom: 8px;
 }
+
+/*------------------------ 6 Portfolio Section ------------------------*/
+
+#portfolio .cbp-item {
+  padding: 15px !important;
+}
+
+#portfolio section {
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+
+#portfolio .cbp-item-wrapper {
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  display: inline-block;
+  overflow: hidden;
+  box-shadow: 0px 0px 48px 0px rgba(4, 6, 4, 0.08);
+  -webkit-box-shadow: 0px 0px 48px 0px rgba(4, 6, 4, 0.08);
+  -moz-box-shadow: 0px 0px 48px 0px rgba(4, 6, 4, 0.08);
+  /*    transition: all ease 0.3s;
+  -webkit-transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;*/
+}
+
+.content-header {
+  z-index: 5;
+}
+
+#portfolio .cbp-item-wrapper:hover {
+  transition: all ease 0.3s;
+  -webkit-transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  box-shadow: 0px 0px 20px 0px rgba(4, 6, 4, 0.08);
+  -webkit-box-shadow: 0px 0px 20px 0px rgba(4, 6, 4, 0.08);
+  -moz-box-shadow: 0px 0px 20px 0px rgba(4, 6, 4, 0.08);
+}
+
+#portfolio .cbp-item figure img,
+.work figure {
+  width: 100%;
+}
+
+#portfolio .cbp-item figcaption .title {
+  font-size: 14px;
+  color: #000;
+}
+
+#portfolio .cbp-item figcaption {
+  padding: 14px;
+}
+
+#portfolio .cbp-item figcaption .info {
+  font-size: 13px;
+  color: #989898;
+  line-height: 18px;
+  display: block;
+}
+
+#portfolio #filters-container .cbp-filter-item {
+  font-size: 14px;
+  color: #787878;
+  cursor: pointer;
+  float: left;
+  margin-right: 15px;
+}
+
+#portfolio .cbp-item:hover figure .icon {
+  opacity: 0.9;
+  transition: all ease 0.3s;
+  -webkit-transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+  transform: translate(0, -25px);
+  -webkit-transform: translate(0, -25px);
+  -moz-transform: translate(0, -25px);
+}
+
+#portfolio .cbp-item figure .icon {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  opacity: 0;
+  display: table-cell;
+  vertical-align: middle;
+  top: 50%;
+  margin-top: -20px;
+  transition: all ease 0.3s;
+}
+
+#portfolio .cbp-item figure .icon i {
+  color: #fff;
+  padding: 17px 0 16px;
+  min-width: 50px;
+  border-radius: 50px;
+  text-align: center;
+  transition: all ease 0.3s;
+  text-align: center;
+  background: rgba(3, 122, 249, 0.8);
+}
+
+#portfolio .cbp-item figure .icon i:before {
+  font-size: 18px;
+}
+
+/* portfolio content */
+
+.portfolio-content figure img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.cbp-popup-singlePage .cbp-popup-close {
+  background: url(../images/sprite.png) -74px -3px no-repeat scroll transparent !important;
+}
+
+.cbp-popup-singlePage .cbp-popup-prev {
+  background: url(../images/sprite.png) -23px -3px no-repeat scroll transparent !important;
+}
+
+.cbp-popup-singlePage .cbp-popup-next {
+  background: url(../images/sprite.png) -127px -3px no-repeat scroll transparent !important;
+}
+
+.cbp-popup-singlePage .cbp-popup-close:hover {
+  background: url(../images/sprite.png) -74px -46px no-repeat scroll transparent !important;
+}
+
+.cbp-popup-singlePage .cbp-popup-prev:hover {
+  background: url(../images/sprite.png) -23px -46px no-repeat scroll transparent !important;
+}
+
+.cbp-popup-singlePage .cbp-popup-next:hover {
+  background: url(../images/sprite.png) -127px -46px no-repeat scroll
+    transparent !important;
+}
+
+.cbp-popup-singlePage .cbp-popup-navigation-wrap {
+  background-color: #fff;
+  box-shadow: -5px 10px 12px -10px rgba(201, 201, 201, 0.3);
+}
+
+.cbp-popup-singlePage-counter {
+  color: #c1c1c1;
+}
+
+.social-share ul {
+  list-style: none;
+  display: inline-block;
+}
+
+.social-share ul li {
+  list-style: none;
+  float: left;
+  margin-right: 10px;
+}
+
+.social-share ul li a {
+  color: #b6b6b6;
+}
+
+.social-share ul li a:hover {
+  color: #000;
+  transition: all ease 0.3s;
+  -webkit-transition: all ease 0.3s;
+  -moz-transition: all ease 0.3s;
+}
+
+.cbp-slider .cbp-nav-next:after,
+.cbp-slider .cbp-nav-prev:after {
+  width: 34px;
+  height: 34px;
+  background-size: 109px 140px;
+  background-position: -35px -71px;
+}
+
+.cbp-slider .cbp-nav-prev:after {
+  background-position: 0px -71px;
+}
+
+.cbp-slider .cbp-nav-next:after:hover,
+.cbp-slider .cbp-nav-prev:after:hover {
+  width: 34px;
+  height: 34px;
+  background-size: 109px 140px;
+  background-position: -35px -71px;
+  opacity: 0.3;
+  transition: all ease 0.3s;
+}
+
+.cbp-slider .cbp-nav-next:after {
+  background-position: -35px -71px;
+}
+
+.cbp-slider .cbp-nav-prev:hover:after {
+  background-position: 0px -71px;
+}
+
+.cbp-slider .cbp-nav-next:hover:after {
+  background-position: -35px -71px;
+}
+
+.mat-slider {
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.port-item {
+  margin-bottom: 30px;
+  display: block;
+}

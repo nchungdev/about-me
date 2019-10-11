@@ -1,6 +1,66 @@
-<div id="portfolio"></div>
+<div id="portfolio">
+  <section class="col-md-12">
+    <div class="col-md-12 content-header bottom_15">
+      <div class="section-title top_30 bottom_30">
+        <span></span>
+        <h2>Portfolio</h2>
+      </div>
+      <div id="filters-container">
+        <!-- '*' means shows all item elements -->
+        <div data-filter="*" class="cbp-filter-item cbp-filter-item-active">
+          All
+        </div>
+        <div data-filter=".webdesign" class="cbp-filter-item">Android</div>
+        <div data-filter=".motion" class="cbp-filter-item">Kotlin</div>
+        <div data-filter=".illustration" class="cbp-filter-item">
+          Java
+        </div>
+        <div data-filter=".photography" class="cbp-filter-item">
+          Javascript
+        </div>
+        <div data-filter=".photography" class="cbp-filter-item">
+          Php
+        </div>
+        <div data-filter=".photography" class="cbp-filter-item">
+          Html/CSS
+        </div>
+      </div>
+    </div>
+    <div id="grid-container">
+      <div class="cbp-wrapper-outer">
+        <div class="cbp-wrapper">
+          <!-- a work -->
+          <div
+            class="cbp-item webdesign"
+            style="width: 272px; left: 0px; top: 0px;"
+          >
+            <div class="cbp-item-wrapper">
+              <a href="portfolio-detail/work-01.html" class=" cbp-singlePage">
+                <figure>
+                  <div class="icon">
+                    <i class="fa fa-clone" aria-hidden="true"></i>
+                  </div>
+                  <img src="images/works/work-01.jpg" alt="" />
+                  <figcaption>
+                    <span class="title">Babel Admin</span><br />
+                    <span class="info">An admin template design.</span>
+                  </figcaption>
+                </figure>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
 <script>
-  // $.get("https://api.github.com/repos/octocat/Hello-World", function(data) {
-  //   $("#portfolio").html(data);
-  // });
+  $.get("https://api.github.com/users/nchungdev/repos", function(data) {
+    var titles = "";
+    data.forEach(repos => {
+      titles += repos.name;
+      titles += "<br/>";
+    });
+    $("#grid-container").html(titles);
+  });
 </script>
