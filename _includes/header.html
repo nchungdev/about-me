@@ -63,8 +63,9 @@
 </header>
 <script>
   (function setupNavbar() {
+    let mobileMenu = $(".menuin");
     $(".hamburger").click(function(e) {
-      $(".menuin").slideToggle();
+      mobileMenu.slideToggle();
     });
     let tab = $("ul.tabs").children("li.tab");
     tab.click(function(e) {
@@ -78,6 +79,12 @@
         $(id).addClass("active");
         tab.removeClass("active");
         $(this).addClass("active");
+      }
+      mobileMenu.slideUp();
+    });
+    $(document).mouseup(function(e) {
+      if (!mobileMenu.is(e.target) && mobileMenu.has(e.target).length === 0) {
+        mobileMenu.slideUp();
       }
     });
   })();

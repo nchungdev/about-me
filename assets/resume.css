@@ -2,6 +2,12 @@ ul.timeline {
   margin-left: 10px;
 }
 
+.timeline-title {
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 25px;
+  line-height: 30px;
+}
 .timeline li {
   border-left: solid 2px #ececec;
   list-style: none;
@@ -73,7 +79,7 @@ ul.timeline {
 }
 
 .skill-list h3 {
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .skill-list .progress {

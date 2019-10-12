@@ -1,61 +1,69 @@
 <div id="portfolio">
   <div class="row">
-    <div class="section-title top_30 bottom_30">
-      <span></span>
-      <h2>Portfolio</h2>
-    </div>
-    <div id="filters-container">
-      <!-- '*' means shows all item elements -->
-      <div data-filter="*" class="cbp-filter-item cbp-filter-item-active">
-        All
+    <div class="page-container">
+      <div class="page-title">
+        <span></span>
+        <h2>Portfolio</h2>
       </div>
-      <div data-filter=".webdesign" class="cbp-filter-item">Android</div>
-      <div data-filter=".motion" class="cbp-filter-item">Kotlin</div>
-      <div data-filter=".illustration" class="cbp-filter-item">
-        Java
-      </div>
-      <div data-filter=".photography" class="cbp-filter-item">
-        Javascript
-      </div>
-      <div data-filter=".photography" class="cbp-filter-item">
-        Php
-      </div>
-      <div data-filter=".photography" class="cbp-filter-item">
-        Html/CSS
-      </div>
-    </div>
-  </div>
-  <div id="grid-container">
-    <div class="cbp-wrapper-outer">
-      <div class="row">
-        <div id="portfolio-container" class="cbp-wrapper"></div>
+      <div class="page-content">
+        <div id="filters-container"></div>
+        <div id="grid-container" class="portfolio-items">
+          <div class="cbp-wrapper-outer">
+            <div class="row">
+              <div id="portfolio-container" class="portfolio-wrapper"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 <script>
-  $.get("https://api.github.com/users/nchungdev/repos", function(data) {
-    var titles = "";
-    data.forEach(repos => {
-      titles += "<div class='cbp-item webdesign col-md-4 col-sm-6 col-xs-12'>";
-      titles += "<div class='cbp-item-wrapper'>";
-      titles +=
-        '<a href="portfolio-detail/work-01.html" class="cbp-singlePage">';
-      titles += "<figure>";
-      titles += '<div class="icon">';
-      titles += '<i class="fa fa-clone" aria-hidden="true"></i>';
-      titles += "</div>";
-      titles += '<img src="images/works/work-01.jpg"/>';
-      titles += "<figcaption>";
-      titles += '<span class="title">' + repos.name + "</span><br />";
-      titles += '<span class="info">An admin template design.</span>';
-      titles += "</figcaption>";
-      titles += "</figure>";
-      titles += "</a>";
-      titles += "</div>";
-      titles += "</div>";
-      titles += "<br/>";
+  function makeReposItems(data) {
+    return data.map(repos => {
+      var reposItem = "";
+      reposItem += "<div class='col-lg-4 col-md-6 col-sm-6 col-xs-12'>";
+      reposItem += "<div class='portfolio-item-wrapper'>";
+      reposItem += '<a href="' + repos.url + '" class="cbp-singlePage">';
+      reposItem += "<figure>";
+      reposItem += "<div class='portfolio-image'>";
+      reposItem +=
+        '<img src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1MFWceSStOgPmqholFlYP9AE1PMEUUrqZ%2Fsliders-discreteslider-states2.png"/>';
+      reposItem += '<div class="blur"></div>';
+      reposItem += '<div class="icon">';
+      reposItem += "<i class='fa fa-github'></i>";
+      reposItem += "<p>View on Github</p>";
+      reposItem += "</div>";
+      reposItem += "</div>";
+      reposItem += "<figcaption>";
+      reposItem += '<span class="title">' + repos.name + "</span>";
+      reposItem += '<span class="info">An admin template design.</span>';
+      reposItem += "</figcaption>";
+      reposItem += "</figure>";
+      reposItem += "</a>";
+      reposItem += "</div>";
+      reposItem += "</div>";
+      return reposItem;
     });
-    $("#portfolio-container").html(titles);
+  }
+
+  function makeFilterItems(data) {
+    let filterMap = new Map([["All", "All"]]);
+    let filterItem = data
+      .filter(repos => repos.language != null)
+      .map(repos => filterMap.set(repos.language, repos.language));
+    let values = Array.from(filterMap.values());
+    let createFilterItem = value =>
+      '<div data-filter="*" class="filter-item ' +
+      (value == "All" ? "filter-item-active" : "") +
+      '">' +
+      value +
+      "</div>";
+    return values.map(createFilterItem);
+  }
+
+  $.get("https://api.github.com/users/nchungdev/repos", function(data) {
+    $("#filters-container").html(makeFilterItems(data));
+    $("#portfolio-container").html(makeReposItems(data));
   });
 </script>

@@ -110,3 +110,102 @@ header nav .menuout {
 header nav .menuout {
   display: none;
 }
+
+@media screen and (max-width: 991px) and (min-width: 769px) {
+  header nav {
+    margin-top: 30px;
+  }
+
+  nav .social-icons {
+    display: none;
+  }
+
+  nav .hamburger {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    margin-top: 30px;
+  }
+  header nav ul.tabs li:first-child,
+  header nav .menuout ul.tabs li {
+    display: block;
+  }
+
+  header nav ul.tabs li {
+    display: none;
+  }
+
+  header nav .menuout {
+    width: 100%;
+    position: relative;
+  }
+
+  header nav .menuout .menuin {
+    width: 100%;
+    background: #fff;
+    position: absolute;
+    z-index: 4;
+    margin-top: 25px;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    box-shadow: 0px 2px 92px 0px rgba(0, 0, 0, 0.05);
+    -webkit-box-shadow: 0px 2px 92px 0px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0px 2px 92px 0px rgba(0, 0, 0, 0.05);
+  }
+
+  header nav .menuout .menuin ul.tabs li:first-child {
+    display: none;
+  }
+
+  header nav .menuout .menuin ul.tabs li {
+    float: none;
+    text-align: center;
+    border-bottom: solid 1px #efefef;
+  }
+
+  header nav .menuout .menuin ul.tabs li a {
+    width: 100%;
+    display: block;
+    cursor: pointer;
+    line-height: 58px;
+  }
+
+  header nav .hamburger {
+    font-size: 20px;
+    margin-right: 23px;
+    cursor: pointer;
+    line-height: 71px;
+    border-left: solid 1px #eaeaea;
+    padding-left: 21px;
+  }
+
+  header nav .menuout {
+    display: block;
+  }
+  .social-icons {
+    margin-right: 14px;
+    line-height: 67px;
+  }
+}
+@media (max-width: 321px) {
+  .social-icons {
+    display: none;
+  }
+
+  header nav .hamburger {
+    border: 0;
+  }
+
+  footer .footer {
+    line-height: 19px;
+    padding-top: 14px;
+  }
+
+  .timeline li .line-title {
+    line-height: 20px;
+  }
+}
