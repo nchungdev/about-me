@@ -1,5 +1,5 @@
 <div id="about" class="active">
-  {% assign about = site.data.me.about %}
+  {% assign about = site.data.about %}
   <!-- Text Section -->
   <div class="row">
     <section class="about-me line col-md-12 padding_30 padbot_45">
@@ -20,7 +20,7 @@
         <h2>My Services</h2>
       </div>
       <div class="row">
-        {% assign services = site.data.me.services %}
+        {% assign services = site.data.services %}
         <!-- a service -->
         {% for service in services %}
         <div class="col-md-3 col-sm-6 col-xs-12">
@@ -42,7 +42,7 @@
   <!-- Skills Section -->
   <div class="row">
     <!-- assign -->
-    {% assign skill = site.data.me.skill %}
+    {% assign skill = site.data.skill %}
     <section class="design-skills col-md-6 padding_60 padbot_50">
       <div class="section-title bottom_45">
         <span></span>

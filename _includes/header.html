@@ -4,7 +4,7 @@
       <!-- navigation bar -->
       <div class="col-md-8 col-sm-8 col-xs-4">
         <ul class="tabs">
-          {% assign menu = site.data.me.headers.menu %}
+          {% assign menu = site.data.headers.menu %}
           <!-- ---- -->
           {% for tab in menu %}
           <li class="tab">
@@ -20,7 +20,7 @@
         </ul>
       </div>
       <div class="col-md-4 col-sm-4 col-xs-8 dynamic">
-        {% assign info = site.data.me.profile.info %}
+        {% assign info = site.data.profile.info %}
         <a
           href="mailto:{{ info.email }}"
           class="pull-right site-btn icon hidden-xs"
@@ -30,7 +30,7 @@
           <i class="fa fa-bars" aria-hidden="true"></i>
         </div>
         <div class="hidden-md social-icons pull-right">
-          {% assign socials = site.data.me.headers.social %}
+          {% assign socials = site.data.headers.social %}
           <!-- ---- -->
           {% for social in socials %}
           <a class="{{ social.style }}" href="{{ social.href }}">
@@ -43,7 +43,7 @@
     <div class="menuout">
       <div class="menuin" style="display: none;">
         <ul class="tabs">
-          {% assign menu = site.data.me.headers.menu %}
+          {% assign menu = site.data.headers.menu %}
           <!-- ---- -->
           {% for tab in menu %}
           <li class="tab">

@@ -1,44 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    {% include /me/meta.html %}
+    {% include meta.html %}
 
     <title>
-      {% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} –
+      {% if page.title %}
+      {{ page.title }}
+      – {% else %}
+      {{ site.name }}
+      – {% endif%}
       {{ site.description }}
     </title>
   </head>
   <body>
-    <!-- Wrapper -->
     <div class="wrapper top_60 container">
       <div class="row">
-        {% include /me/profile.html %}
-        <!-- Page Tab Container Div -->
+        {% include profile.html %}
         <div
-          id="ajax-tab-container"
           class="col-lg-9 col-md-8 tab-container"
           data-easytabs="true"
+          id="ajax-tab-container"
         >
           <div class="row">
-            {% include /me/header.html %}
-
-            <!-- Page Content
-    ================================================== -->
+            {% include header.html %}
             <div class="col-md-12">
-              <div id="content" role="main" class="panel-container">
+              <div class="panel-container" id="content" role="main">
                 {{ content }}
               </div>
             </div>
-            <!-- col-md-12 end -->
           </div>
-          <!-- row end -->
-          <!-- Footer
-================================================== -->
-          {% include /me/footer.html %}
+          {% include footer.html %}
         </div>
-        <!-- Tab Container - End -->
       </div>
-      <!-- Row - End -->
     </div>
   </body>
 </html>
