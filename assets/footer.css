@@ -1,0 +1,29 @@
+footer .footer {
+  background: #1e1e1e;
+  min-height: 70px;
+  color: #fff;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  line-height: 72px;
+}
+
+footer .footer .name {
+  color: #fff;
+  font-size: 15px;
+}
+
+footer .footer .copyright {
+  color: #9c9c9c;
+  font-size: 12px;
+  text-align: right;
+}
+
+footer .footer .copyright a {
+  color: #fff;
+}
+
+footer .footer .copyright a:hover {
+  color: #dfdfdf;
+  transition: all ease 0.3s;
+}
