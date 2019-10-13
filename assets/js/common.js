@@ -1,9 +1,6 @@
 $(document).ready(function() {
   (function() {
     let hash = window.location.hash;
-    if (hash == "") {
-      $("#about").addClass("active");
-    }
     let divActive = $("#content").children("div.active");
     const tabLg = $("#menu-lg").children("li.tab");
     const tabSm = $("#menu-sm").children("li.tab");
@@ -13,14 +10,15 @@ $(document).ready(function() {
     function setTabOnClickListener(tabs) {
       tabs.children("a").click(function(e) {
         e.preventDefault();
-        console.log($(this));
         window.location.hash = this.hash;
-        activeTab(tabLg, hash);
-        activeTab(tabSm, hash);
       });
     }
 
     (function checkHashOnLoad() {
+      if (hash == "") {
+        $("#about").addClass("active");
+        return;
+      }
       if ("#" + divActive.attr("id") != hash) {
         divActive.removeClass("active");
         $(hash).addClass("active");
@@ -30,13 +28,13 @@ $(document).ready(function() {
     })();
 
     function activeTab(tabs, hash) {
-      tabs.each(() => {
-        const isNeedActiveTab =
-          $(this)
+      tabs.each(function(index, value) {
+        const isEqual =
+          $(value)
             .children("a")
             .attr("href") == hash;
-        if (isNeedActiveTab) {
-          $(this).addClass("active");
+        if (isEqual) {
+          $(value).addClass("active");
           return;
         }
       });
