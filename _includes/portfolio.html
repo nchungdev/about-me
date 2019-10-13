@@ -7,10 +7,10 @@
       </div>
       <div class="page-content">
         <div id="filters-container"></div>
-        <div id="grid-container" class="portfolio-items">
+        <div class="portfolio-items" id="grid-container">
           <div class="cbp-wrapper-outer">
             <div class="row">
-              <div id="portfolio-container" class="portfolio-wrapper"></div>
+              <div class="portfolio-wrapper" id="portfolio-container"></div>
             </div>
           </div>
         </div>
@@ -19,16 +19,36 @@
   </div>
 </div>
 <script>
+  function checkURL(url) {
+    return url.match(/\.(jpeg|jpg|gif|png)$/) != null;
+  }
+
+  function extractUrl(readme) {
+    const regex = /\bhttps?:\/\/\S+[^()<br]([a-z])/gi;
+    var url = "";
+    while ((m = regex.exec(readme)) !== null) {
+      if (m.index === regex.lastIndex) {
+        regex.lastIndex++;
+      }
+      m.forEach((match, groupIndex) => {
+        if (checkURL(match)) {
+          url = match;
+          return;
+        }
+      });
+    }
+    return url;
+  }
+
   function makeReposItems(data) {
-    return data.map(repos => {
+    return data.map(repo => {
       var reposItem = "";
       reposItem += "<div class='col-lg-4 col-md-6 col-sm-6 col-xs-12'>";
       reposItem += "<div class='portfolio-item-wrapper'>";
-      reposItem += '<a href="' + repos.url + '" class="cbp-singlePage">';
+      reposItem += '<a href="' + repo.html_url + '" class="cbp-singlePage">';
       reposItem += "<figure>";
       reposItem += "<div class='portfolio-image'>";
-      reposItem +=
-        '<img src="https://storage.googleapis.com/spec-host/mio-staging%2Fmio-components%2F1568406561463%2Fassets%2F1MFWceSStOgPmqholFlYP9AE1PMEUUrqZ%2Fsliders-discreteslider-states2.png"/>';
+      reposItem += '<img id="' + repo.id + '" />';
       reposItem += '<div class="blur"></div>';
       reposItem += '<div class="icon">';
       reposItem += "<i class='fa fa-github'></i>";
@@ -36,7 +56,7 @@
       reposItem += "</div>";
       reposItem += "</div>";
       reposItem += "<figcaption>";
-      reposItem += '<span class="title">' + repos.name + "</span>";
+      reposItem += '<span class="title">' + repo.name + "</span>";
       reposItem += '<span class="info">An admin template design.</span>';
       reposItem += "</figcaption>";
       reposItem += "</figure>";
@@ -49,21 +69,55 @@
 
   function makeFilterItems(data) {
     let filterMap = new Map([["All", "All"]]);
-    let filterItem = data
-      .filter(repos => repos.language != null)
-      .map(repos => filterMap.set(repos.language, repos.language));
+    data
+      .filter(repo => repo.language != null)
+      .map(repo => filterMap.set(repo.language, repo.language));
     let values = Array.from(filterMap.values());
-    let createFilterItem = value =>
-      '<div data-filter="*" class="filter-item ' +
-      (value == "All" ? "filter-item-active" : "") +
-      '">' +
-      value +
-      "</div>";
+    let createFilterItem = value => {
+      let clazz = value == "All" ? " filter-item-active" : "";
+      return (
+        '<div data-filter="' +
+        value +
+        '" class="filter-item' +
+        clazz +
+        '">' +
+        value +
+        "</div>"
+      );
+    };
     return values.map(createFilterItem);
+  }
+
+  function loadImage(data) {
+    data.forEach(repo => {
+      let url =
+        "https://raw.githubusercontent.com/nchungdev/" +
+        repo.name +
+        "/master/README.md";
+      $.get(url, readme => {
+        $("#" + repo.id).attr("src", extractUrl(readme));
+      });
+    });
+  }
+
+  function filterRepos(data) {
+    let filter = $("#filters-container").children(".filter-item");
+    filter.click(function(e) {
+      let currentFilter = $(this);
+      filter.removeClass("filter-item-active");
+      currentFilter.addClass("filter-item-active");
+      let type = currentFilter.data("filter");
+      let list =
+        type == "All" ? data : data.filter(repo => repo.language == type);
+      $("#portfolio-container").html(makeReposItems(list));
+      loadImage(list);
+    });
   }
 
   $.get("https://api.github.com/users/nchungdev/repos", function(data) {
     $("#filters-container").html(makeFilterItems(data));
     $("#portfolio-container").html(makeReposItems(data));
+    loadImage(data);
+    filterRepos(data);
   });
 </script>

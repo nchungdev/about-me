@@ -3,7 +3,7 @@
     <div class="row">
       <!-- navigation bar -->
       <div class="col-md-8 col-sm-8 col-xs-4">
-        <ul class="tabs">
+        <ul id="menu-lg" class="tabs">
           {% assign menu = site.data.headers.menu %}
           <!-- ---- -->
           {% for tab in menu %}
@@ -42,7 +42,7 @@
     </div>
     <div class="menuout">
       <div class="menuin" style="display: none;">
-        <ul class="tabs">
+        <ul id="menu-sm" class="tabs">
           {% assign menu = site.data.headers.menu %}
           <!-- ---- -->
           {% for tab in menu %}
