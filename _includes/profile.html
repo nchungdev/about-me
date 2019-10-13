@@ -1,42 +1,49 @@
 {% assign info = site.data.profile.info %}
-<div class="col-lg-3 col-md-4">
-  <div class="profile">
-    <div class="profile-name">
-      <span class="name">{{ info.name }}</span
-      ><br />
-      <span class="job">{{ info.job }}</span>
-    </div>
-    <figure class="profile-image">
-      <img src="{{ info.avatar }}" alt="" />
-    </figure>
-    <ul class="profile-information">
-      <li></li>
-      <li>
-        <p><span>Name:</span> {{ info.name }}</p>
-      </li>
-      <li>
-        <p><span>Birthday:</span> {{ info.birthday }}</p>
-      </li>
-      <li>
-        <p><span>Job:</span> {{ info.job }}</p>
-      </li>
-      <li>
-        <p>
-          <span>Email:</span>
-          <a href="mailto:{{ info.email }}">{{ info.email }}</a>
-        </p>
-      </li>
-      <li>
-        <p>
-          <span>Skype:</span>
-          <a href="skype:{{ info.skype }}">{{ info.skype }}</a>
-        </p>
-      </li>
-    </ul>
-    <div class="col-md-12">
-      <button class="site-btn icon">
-        Download Cv <i class="fa fa-download" aria-hidden="true"></i>
-      </button>
-    </div>
+<div class="profile">
+  <div class="profile-name">
+    <span class="name">{{ info.name }}</span
+    ><br />
+    <span class="job">{{ info.job }}</span>
+  </div>
+  <figure class="profile-image">
+    <img src="{{ info.avatar }}" alt="" />
+  </figure>
+  <ul class="profile-information">
+    <li></li>
+    <li>
+      <p><span>Name:</span> {{ info.name }}</p>
+    </li>
+    <li>
+      <p><span>Birthday:</span> {{ info.birthday }}</p>
+    </li>
+    <li>
+      <p><span>Job:</span> {{ info.job }}</p>
+    </li>
+    <li>
+      <p>
+        <span>Email:</span>
+        <a href="mailto:{{ info.email }}">{{ info.email }}</a>
+      </p>
+    </li>
+    <li>
+      <p>
+        <span>Skype:</span>
+        <a href="skype:{{ info.skype }}">{{ info.skype }}</a>
+      </p>
+    </li>
+  </ul>
+  <div class="d-none d-md-block social-icons-lg col-md-12">
+    {% assign socials = site.data.headers.social %}
+    <!-- ---- -->
+    {% for social in socials %}
+    <a class="{{ social.style }}" href="{{ social.href }}">
+      <i class="fab fa-{{ social.icon }}" aria-hidden="true"></i>
+    </a>
+    {% endfor %}
+  </div>
+  <div class="col-md-12">
+    <button class="site-btn icon">
+      Download Cv <i class="fa fa-download" aria-hidden="true"></i>
+    </button>
   </div>
 </div>

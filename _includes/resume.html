@@ -3,8 +3,7 @@
   <div class="row">
     <section class="page-container">
       <div class="page-title">
-        <span></span>
-        <h2>Resume</h2>
+        <h2><i class="fas fa-{{ site.data.icons.resume }}"></i> Resume</h2>
       </div>
       <div class="row">
         <!-- Working History -->
@@ -12,13 +11,18 @@
           <ul class="timeline col-md-12 top_30">
             <li>
               <i class="fa fa-suitcase" aria-hidden="true"></i>
-              <h2 class="timeline-title">Working History</h2>
+              <h2 class="timeline-title">Experiences</h2>
             </li>
             {% for working in site.data.profile.working %}
             <li>
-              <h3 class="line-title">
-                {{ working.position }} - {{ working.company }}
-              </h3>
+              <div class="line-title">
+                {% if working.position == "" %}
+                <h3>{{ working.nameOfOrg }}</h3>
+                {% else %}
+                <h3>{{ working.position }}</h3>
+                <p>{{ working.nameOfOrg }}</p>
+                {% endif%}
+              </div>
               <span>{{ working.duration }}</span>
               <p class="little-text">
                 {{ working.description }}
@@ -32,7 +36,7 @@
           <ul class="timeline col-md-12 top_30">
             <li>
               <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-              <h2 class="timeline-title">Education History</h2>
+              <h2 class="timeline-title">Education</h2>
             </li>
             <!-- a work -->
             {% for education in site.data.profile.education %}

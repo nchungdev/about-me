@@ -82,6 +82,9 @@ ul.profile-information li:before {
 ul.profile-information li span {
   color: #000;
 }
+ul.profile-information li a {
+  color: #7f7f7f;
+}
 
 ul.profile-information li:first-child {
   padding-bottom: 10px;
@@ -137,4 +140,14 @@ ul.profile-information li:first-child:after {
     clip-path: polygon(0 9%, 100% 0, 100% 94%, 0% 100%);
     margin-top: -40px;
   }
+}
+
+.social-icons-lg {
+  text-align: center;
+}
+.social-icons-lg a {
+  color: #2e2e2e;
+  font-size: 1.5em;
+  display: inline-block;
+  margin: 8px;
 }

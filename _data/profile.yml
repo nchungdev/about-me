@@ -7,9 +7,17 @@
   avatar: http://tavonline.net/html/mat/default/images/profile.jpg
 
 "working":
-  - company: Techbase Vietnam
-    position: Android Developer
+  - position: Junior Android Developer
+    nameOfOrg: Techbase Vietnam
     duration: 06/2018 - Present
+    description:
+      Expenses as material breeding insisted building to in. Continual
+      so distrusts pronounce by unwilling listening. Thing do taste on
+      we manor.
+
+  - position: ""
+    nameOfOrg: Pet Projects
+    duration: All The Time
     description:
       Expenses as material breeding insisted building to in. Continual
       so distrusts pronounce by unwilling listening. Thing do taste on
@@ -21,4 +29,7 @@
     description: "Expenses as material breeding insisted building to in. Continual so distrusts pronounce by unwilling listening. Thing do taste on we manor."
   - name: Android Basic | Khoa Pham
     duration: 8 weeks
-    description: abc
+    description:
+      Expenses as material breeding insisted building to in. Continual
+      so distrusts pronounce by unwilling listening. Thing do taste on
+      we manor.

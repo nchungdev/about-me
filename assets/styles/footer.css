@@ -1,25 +1,25 @@
 footer {
   margin-top: 30px;
+  margin-bottom: 10px;
+  margin: 6px 0;
+  text-align: center;
 }
 footer .footer {
   background: #1e1e1e;
-  min-height: 70px;
   color: #fff;
+  padding: 10px 0;
   border-radius: 8px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  line-height: 72px;
 }
 
 footer .footer .name {
   color: #fff;
   font-size: 15px;
+  display: inline;
 }
 
 footer .footer .copyright {
   color: #9c9c9c;
   font-size: 12px;
-  text-align: right;
 }
 
 footer .footer .copyright a {
@@ -30,8 +30,7 @@ footer .footer .copyright a:hover {
   color: #dfdfdf;
   transition: all ease 0.3s;
 }
-@media (max-width: 1199px) {
-  footer .footer .copyright {
-    text-align: center;
-  }
+footer .footer .name,
+footer .footer .copyright {
+  text-align: center;
 }

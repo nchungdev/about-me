@@ -4,40 +4,10 @@
   <div class="row">
     <section class="col-md-12 page-container">
       <div class="page-title">
-        <span></span>
-        <h2>About Me</h2>
+        <h2><i class="fas fa-{{ site.data.icons.about }}"></i> About Me</h2>
       </div>
       <div class="page-content">
         <p class="about-me">{{ about.content }}</p>
-      </div>
-    </section>
-  </div>
-  <!-- My Services Section -->
-  <div class="row">
-    <section class="col-md-12 page-container graybg">
-      <div class="page-title">
-        <span></span>
-        <h2>My Services</h2>
-      </div>
-      <div class="page-content">
-        <div class="row">
-          {% assign services = site.data.services %}
-          <!-- a service -->
-          {% for service in services %}
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="service">
-              <div class="icon">
-                <img width="75%" src="{{ service.icon }}" />
-              </div>
-              <p class="title">{{ service.title }}</p>
-              <p class="little-text">
-                {{ service.litle_text }}
-              </p>
-            </div>
-          </div>
-          <!-- a service -->
-          {% endfor %}
-        </div>
       </div>
     </section>
   </div>
@@ -47,20 +17,47 @@
     {% assign skill = site.data.skill %}
     <section class="col-md-6 page-container">
       <div class="page-title">
-        <span></span>
-        <h2>Coding skills</h2>
+        <h2>
+          <i class="fas fa-{{ site.data.icons.coding }}"></i>
+          Coding
+        </h2>
       </div>
       <div class="page-content">
-        <ul class="skill-list">
-          {% for item in skill %}
-          <li>
-            <h3>{{ item.name }}</h3>
-            <div class="progress">
-              <div
-                class="percentage"
-                style="width:{{ item.percentage }};"
-              ></div>
+        <ul class="skill-list circles row">
+          {% for item in skill.coding %}
+          <li class="col-sm-6">
+            <div class="progress" data-percentage="{{ item.percentage }}">
+              <span class="progress-left">
+                <span class="progress-bar"></span>
+              </span>
+              <span class="progress-right">
+                <span class="progress-bar"></span>
+              </span>
+              <div class="progress-value">
+                <h2>{{ item.percentage }}%</h2>
+              </div>
             </div>
+            <div class="name">
+              <h2>{{ item.name }}</h2>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </section>
+    <section class="col-md-6 page-container">
+      <div class="page-title">
+        <h2>
+          <i class="fas fa-{{ site.data.icons.knowledge }}"></i>
+          Knowledges
+        </h2>
+      </div>
+      <div class="page-content">
+        <ul class="knowledge-list">
+          {% for item in skill.knowledges %}
+          <li>
+            <i class="fas fa-check"></i>
+            <h2>{{ item.name }}</h2>
           </li>
           {% endfor %}
         </ul>

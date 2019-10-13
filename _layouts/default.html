@@ -15,21 +15,18 @@
   <body>
     <div class="container body-container">
       <div class="row">
-        {% include profile.html %}
-        <div
-          class="col-lg-9 col-md-8 tab-container"
-          data-easytabs="true"
-          id="ajax-tab-container"
-        >
+        <div class="col-lg-3 col-md-12" style="margin-top: 30px;">
+          {% include profile.html %}
+        </div>
+        <div class="col-lg-9 col-md-12 tab-container">
           <div class="row">
             {% include header.html %}
-            <div class="col-md-12">
+            <div class="col-md-12 panel-background">
               <div class="panel-container" id="content" role="main">
                 {{ content }}
               </div>
             </div>
           </div>
-          {% include footer.html %}
         </div>
       </div>
     </div>

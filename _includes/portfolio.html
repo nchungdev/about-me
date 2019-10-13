@@ -3,7 +3,7 @@
     <div class="page-container">
       <div class="page-title">
         <span></span>
-        <h2>Portfolio</h2>
+        <h2><i class="fa fa-{{ site.data.icons.portfolio }}"></i> Portfolio</h2>
       </div>
       <div class="page-content">
         <div id="filters-container"></div>
@@ -55,13 +55,13 @@
       reposItem += "</div>";
       reposItem += '<div class="blur"></div>';
       reposItem += '<div class="icon">';
-      reposItem += "<i class='fa fa-github'></i>";
+      reposItem += "<i class='fab fa-github'></i>";
       reposItem += "<p>View on Github</p>";
       reposItem += "</div>";
       reposItem += "</div>";
       reposItem += "<figcaption>";
       reposItem += '<span class="title">' + repo.name + "</span>";
-      reposItem += '<span class="info">An admin template design.</span>';
+      reposItem += '<span class="info">' + repo.description + "</span>";
       reposItem += "</figcaption>";
       reposItem += "</figure>";
       reposItem += "</a>";
@@ -128,13 +128,6 @@
         type == "All" ? data : data.filter(repo => repo.language == type);
       $("#portfolio-container").html(makeReposItems(list));
       loadImage(list);
-      // if (type == "All") {
-      //   $("#portfolio-container").append(
-      //     "<div class='col-lg-12 m-4 mx-auto text-center'><a href='' class='btn-default'>See more at github</a></div>"
-      //   );
-      // } else {
-      //   findLastRow();
-      // }
     });
   }
 
@@ -150,13 +143,12 @@
     }
   }
 
-  $.get("https://api.github.com/users/nchungdev/repos", function(data) {
-    $("#filters-container").html(makeFilterItems(data));
-    $("#portfolio-container").html(makeReposItems(data));
-    loadImage(data);
-    filterRepos(data);
-    // $("#portfolio-container").append(
-    //   "<div class='col-lg-12 m-4 mx-auto text-center'><a href='' class='btn-default'>See more at github</a></div>"
-    // );
-  });
+  $.ajax("https://api.github.com/users/nchungdev/repos?sort=created&page=1")
+    .done(data => {
+      $("#filters-container").html(makeFilterItems(data));
+      $("#portfolio-container").html(makeReposItems(data));
+      loadImage(data);
+      filterRepos(data);
+    })
+    .fail();
 </script>

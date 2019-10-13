@@ -1,8 +1,14 @@
-- name: Kotlin
-  percentage: 60%
-- name: Java
-  percentage: 40%
-- name: Android SDK & Android Studio
-  percentage: 40%
-- name: XML
-  percentage: 60%
+"coding":
+  - name: Kotlin
+    percentage: 60
+  - name: Java
+    percentage: 50
+  - name: Javascripts
+    percentage: 30
+
+"knowledges":
+  - name: Android Basic
+  - name: Android Architecture Components
+  - name: Reactive Programming
+  - name: Code Architecture
+  - name: Google libraries

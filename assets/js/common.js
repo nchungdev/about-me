@@ -6,10 +6,11 @@ $(document).ready(function() {
     const tabSm = $("#menu-sm").children("li.tab");
     setTabOnClickListener(tabLg);
     setTabOnClickListener(tabSm);
-
+    checkIsAbout(hash);
     function setTabOnClickListener(tabs) {
       tabs.children("a").click(function(e) {
         e.preventDefault();
+        checkIsAbout(this.hash);
         window.location.hash = this.hash;
       });
     }
@@ -39,5 +40,16 @@ $(document).ready(function() {
         }
       });
     }
+
+    function checkIsAbout(hash) {
+      if (hash == "#about") $("#content").addClass("no-card");
+      else $("#content").removeClass("no-card");
+      console.log("Changed.." + hash);
+    }
   })();
+
+  const headerBehavior = new HeaderBehavior($("header"), window);
+  $(document).scroll(function() {
+    headerBehavior.fixedHeaderOnScroll();
+  });
 });

@@ -11,9 +11,12 @@
     href: "#contact"
 
 "social":
-  - name: facebook
+  - icon: github
+    style: git
+    href: https://www.github.com/nchungdev/
+  - icon: facebook
     style: fb
     href: https://www.facebook.com/nchung.dev
-  - name: instagram
+  - icon: instagram
     style: ins
     href: https://www.instagram.com/nchung.dev/

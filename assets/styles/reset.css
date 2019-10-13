@@ -81,6 +81,7 @@ video {
   outline: 0;
   font-size: 100%;
   background: transparent;
+  list-style: none;
 }
 
 article,
@@ -136,7 +137,6 @@ ins {
   text-decoration: none;
 }
 
-/* change colours to suit your needs */
 mark {
   background-color: #ff9;
   color: #000;
