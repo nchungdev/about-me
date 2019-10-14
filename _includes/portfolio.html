@@ -3,13 +3,13 @@
     <div class="page-container">
       <div class="page-title">
         <span></span>
-        <h2><i class="fa fa-{{ site.data.icons.portfolio }}"></i> Portfolio</h2>
+        <h2><i class="fa fa-{{ site.data.icons.repo }}"></i> repo</h2>
       </div>
       <div class="page-content">
         <div id="filters-container"></div>
-        <div class="portfolio-items" id="grid-container">
+        <div class="repo-items" id="grid-container">
           <div class="cbp-wrapper-outer">
-            <div class="portfolio-wrapper row" id="portfolio-container">
+            <div class="repo-wrapper row" id="repo-container">
               <div class="loading">
                 <div class="spinner-border"></div>
               </div>
@@ -46,10 +46,10 @@
     return data.map(repo => {
       var reposItem = "";
       reposItem += "<div class='col-lg-4 col-sm-6 col-xs-12 mt-3 mb-3'>";
-      reposItem += "<div class='portfolio-item-wrapper'>";
+      reposItem += "<div class='repo-item-wrapper'>";
       reposItem += '<a href="' + repo.html_url + '" />';
       reposItem += "<figure>";
-      reposItem += "<div class='portfolio-image'>";
+      reposItem += "<div class='repo-image'>";
       reposItem += '<div id="' + repo.id + '" class="img-loading">';
       reposItem += '<div class="spinner-border"></div>';
       reposItem += "</div>";
@@ -126,16 +126,14 @@
       let type = currentFilter.data("filter");
       let list =
         type == "All" ? data : data.filter(repo => repo.language == type);
-      $("#portfolio-container").html(makeReposItems(list));
+      $("#repo-container").html(makeReposItems(list));
       loadImage(list);
     });
   }
 
   function findLastRow() {
-    const items = $("#portfolio-container").children();
-    const itemPerRow = Math.floor(
-      $("#portfolio-container").width() / items.width()
-    );
+    const items = $("#repo-container").children();
+    const itemPerRow = Math.floor($("#repo-container").width() / items.width());
     var i = 1;
     while (i <= itemPerRow) {
       items.eq(items.length - i).removeClass("mb-4");
@@ -146,7 +144,7 @@
   $.ajax("https://api.github.com/users/nchungdev/repos?sort=created&page=1")
     .done(data => {
       $("#filters-container").html(makeFilterItems(data));
-      $("#portfolio-container").html(makeReposItems(data));
+      $("#repo-container").html(makeReposItems(data));
       loadImage(data);
       filterRepos(data);
     })

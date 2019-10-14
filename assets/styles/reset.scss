@@ -1,0 +1,198 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  background: transparent;
+  list-style: none;
+}
+article {
+  display: block;
+}
+aside {
+  display: block;
+}
+details {
+  display: block;
+}
+figcaption {
+  display: block;
+}
+figure {
+  display: block;
+}
+footer {
+  display: block;
+}
+header {
+  display: block;
+}
+hgroup {
+  display: block;
+}
+menu {
+  display: block;
+}
+nav {
+  display: block;
+}
+section {
+  display: block;
+}
+blockquote {
+  quotes: none;
+  &:before {
+    content: "";
+    content: none;
+  }
+  &:after {
+    content: "";
+    content: none;
+  }
+}
+q {
+  quotes: none;
+  &:before {
+    content: "";
+    content: none;
+  }
+  &:after {
+    content: "";
+    content: none;
+  }
+}
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none !important;
+  &:focus {
+    border: 0;
+    outline: 0;
+  }
+}
+button {
+  &:focus {
+    border: 0;
+    outline: 0;
+  }
+}
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+del {
+  text-decoration: line-through;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+textarea {
+  &:focus {
+    border-color: rgba(0, 0, 0, 0.38) !important;
+    outline: 0 none;
+  }
+}
+input[type="text"] {
+  &:focus {
+    border-color: rgba(0, 0, 0, 0.38) !important;
+    outline: 0 none;
+  }
+}
+input[type="password"] {
+  &:focus {
+    border-color: rgba(0, 0, 0, 0.38) !important;
+    outline: 0 none;
+  }
+}
+input[type="datetime"] {
+  &:focus {
+    border-color: rgba(0, 0, 0, 0.38) !important;
+    outline: 0 none;
+  }
+}
+input[type="datetime-local"] {
+  &:focus {
+    border-color: rgba(0, 0, 0, 0.38) !important;
+    outline: 0 none;
+  }
+}
+input[type="date"] {
+  &:focus {
+    border-color: rgba(0, 0, 0, 0.38) !important;
+    outline: 0 none;
+  }
+}
+input[type="month"] {
+  &:focus {
+    border-color: rgba(0, 0, 0, 0.38) !important;
+    outline: 0 none;
+  }
+}
+input[type="time"] {
+  &:focus {
+    border-color: rgba(0, 0, 0, 0.38) !important;
+    outline: 0 none;
+  }
+}
+input[type="week"] {
+  &:focus {
+    border-color: rgba(0, 0, 0, 0.38) !important;
+    outline: 0 none;
+  }
+}
+input[type="number"] {
+  &:focus {
+    border-color: rgba(0, 0, 0, 0.38) !important;
+    outline: 0 none;
+  }
+}
+input[type="email"] {
+  &:focus {
+    border-color: rgba(0, 0, 0, 0.38) !important;
+    outline: 0 none;
+  }
+}
+input[type="url"] {
+  &:focus {
+    border-color: rgba(0, 0, 0, 0.38) !important;
+    outline: 0 none;
+  }
+}
+input[type="search"] {
+  &:focus {
+    border-color: rgba(0, 0, 0, 0.38) !important;
+    outline: 0 none;
+  }
+}
+input[type="tel"] {
+  &:focus {
+    border-color: rgba(0, 0, 0, 0.38) !important;
+    outline: 0 none;
+  }
+}
+input[type="color"] {
+  &:focus {
+    border-color: rgba(0, 0, 0, 0.38) !important;
+    outline: 0 none;
+  }
+}

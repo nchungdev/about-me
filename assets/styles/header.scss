@@ -1,0 +1,211 @@
+header {
+  transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  padding-top: 30px;
+  nav {
+    background: #fff;
+    display: inline-block;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    height: 70px;
+    width: 100%;
+    margin-bottom: 30px;
+    line-height: 70px;
+    box-shadow: 0px 2px 92px 0px rgba(0, 0, 0, 0.2);
+    ul {
+      li {
+        float: left;
+        a {
+          font-size: 14px;
+          font-weight: bold;
+          color: #000;
+          padding: 0 10px;
+          line-height: 73px;
+          display: block;
+          text-transform: uppercase;
+          &:hover {
+            transition: all ease 0.3s;
+          }
+          &:after {
+            border-right: 1px solid #dfdfdf;
+          }
+        }
+      }
+    }
+    a.home-btn {
+      color: #3b5998;
+      border-radius: 6px 0 0 6px;
+      padding: 0px 24px;
+      float: left;
+      height: 70px;
+      line-height: 70px;
+      margin-right: 10px;
+      transition: all ease 0.4s;
+      line-height: 77px;
+      &:hover {
+        transition: all ease 0.3s;
+      }
+      i {
+        font-size: 21px;
+      }
+    }
+    .site-btn {
+      margin: 18px 18px 0 5px;
+    }
+    .menuout {
+      z-index: 10;
+      display: none;
+    }
+  }
+}
+.social-icons {
+  a {
+    color: #000;
+    font-size: 12px;
+    transition: all ease 0.2s;
+    width: 24px;
+    height: 18px;
+    font-size: 1em;
+    margin: 4px;
+    cursor: pointer;
+  }
+}
+.fb {
+  &:hover {
+    color: #3b5998 !important;
+    transition: all ease 0.2s;
+  }
+}
+.ins {
+  &:hover {
+    color: #cd486b !important;
+    transition: all ease 0.2s;
+  }
+}
+@media screen and (min-width: 769px) {
+  nav {
+    .social-icons {
+      display: none;
+    }
+    .hamburger {
+      display: none;
+    }
+  }
+}
+
+.panel-background.sticky {
+  margin-top: 130px;
+}
+header.sticky {
+  position: fixed;
+  z-index: 999;
+}
+@media (max-width: 991px) {
+  div.sticky {
+    margin-top: 130px;
+  }
+  header.sticky {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0 !important;
+    transition: all 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    margin: 0;
+    nav {
+      box-shadow: 0px 0px 48px 0px rgba(4, 6, 4, 0.2);
+      a.home-btn {
+        border-radius: 0;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  header {
+    nav {
+      ul.tabs {
+        li {
+          &:first-child {
+            display: block;
+          }
+          display: none;
+        }
+      }
+      .menuout {
+        ul.tabs {
+          li {
+            display: block;
+          }
+        }
+        width: 100%;
+        position: relative;
+        display: block;
+        .menuin {
+          width: 100%;
+          background: #fff;
+          position: absolute;
+          z-index: 4;
+          margin-top: 25px;
+          border-radius: 8px;
+          box-shadow: 0px 2px 92px 0px rgba(0, 0, 0, 0.05);
+          ul.tabs {
+            li {
+              &:first-child {
+                display: none;
+              }
+              float: none;
+              text-align: center;
+              border-bottom: solid 1px #efefef;
+              a {
+                width: 100%;
+                display: block;
+                cursor: pointer;
+                line-height: 58px;
+              }
+            }
+          }
+        }
+      }
+      .hamburger {
+        font-size: 20px;
+        margin-right: 23px;
+        cursor: pointer;
+        line-height: 71px;
+        border-left: solid 1px #eaeaea;
+        padding-left: 21px;
+      }
+    }
+  }
+  .social-icons {
+    margin-right: 14px;
+    line-height: 67px;
+  }
+}
+@media (max-width: 575px) {
+  .col-xs-4 {
+    width: 33.333337%;
+  }
+  .col-xs-8 {
+    width: 66.666667%;
+  }
+}
+@media (max-width: 321px) {
+  .social-icons {
+    display: none;
+  }
+  header {
+    nav {
+      .hamburger {
+        border: 0;
+      }
+    }
+  }
+  .timeline {
+    li {
+      .line-title {
+        line-height: 20px;
+      }
+    }
+  }
+}

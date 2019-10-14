@@ -1,0 +1,94 @@
+.timeline {
+  margin-left: 10px;
+
+  li {
+    border-left: solid 2px #ececec;
+    list-style: none;
+    padding: 0 0 40px 30px;
+    &:before {
+      content: "";
+      border: solid 2px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50px;
+      font-size: 8px;
+      margin-left: -35px;
+      font-weight: 400;
+      background: #fff;
+      display: block;
+      position: absolute;
+      margin-top: 3px;
+    }
+    .timeline-title {
+      font-size: 18px;
+      font-weight: 500;
+      margin-left: 25px;
+      line-height: 30px;
+    }
+    .line-title {
+      > p {
+        font-size: 16px;
+        margin: 0;
+      }
+      > h3 {
+        font-size: 18px;
+      }
+    }
+    &:first-child {
+      padding: 0 0 60px 19px;
+      &:before {
+        border: 0;
+        background: none;
+        position: relative;
+      }
+      i {
+        float: left;
+        margin-left: -30px;
+        padding: 18px 16px;
+        border-radius: 30px;
+        margin: -13px -45px;
+        background: #fff;
+        width: 53px;
+        text-align: center;
+      }
+    }
+
+    span {
+      font-size: 12px;
+      padding: 9px 0;
+      display: block;
+    }
+    &:last-child {
+      border: 0;
+      margin-left: 2px;
+    }
+  }
+}
+.knowledge-list {
+  list-style: none;
+  padding: 0;
+  li {
+    line-height: 2em;
+    i {
+      color: #425cbb;
+    }
+    h2 {
+      padding: 0 5px;
+      display: inline;
+      font-size: 14px;
+    }
+  }
+}
+.skill-list {
+  .name {
+    position: absolute;
+    top: 120px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+  }
+  li {
+    padding-bottom: 50px;
+  }
+}

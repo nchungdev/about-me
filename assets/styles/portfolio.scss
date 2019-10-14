@@ -1,0 +1,114 @@
+.filter-item {
+  display: inline-flex;
+  margin-right: 15px;
+  font-size: 14px;
+  color: #787878;
+  cursor: pointer;
+}
+.filter-item-active {
+  color: #425cbb;
+  font-weight: bold;
+}
+.repo-items {
+  margin-top: 30px !important;
+}
+.repo-wrapper {
+  border-radius: 8px;
+  background: #fafafa;
+
+  .loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .repo-item-wrapper {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 48px 0px rgba(4, 6, 4, 0.08);
+    height: 100%;
+    margin-bottom: 25px;
+    overflow: hidden;
+    figcaption {
+      padding: 15px;
+      .title {
+        padding: 5px;
+        font-weight: bold;
+        color: #000;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+        display: block;
+      }
+      .info {
+        padding: 5px;
+        width: 100%;
+        font-style: italic;
+        color: #787878;
+        font-size: 14px;
+        white-space: nowrap;
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+    figure {
+      .repo-image {
+        width: 100%;
+        min-height: 220px;
+        position: relative;
+        .icon {
+          text-align: center;
+          z-index: 9;
+          display: none;
+          color: #fafafa;
+          p {
+            color: #ffffff;
+            text-shadow: #787878;
+            font-size: 15px;
+          }
+        }
+        .blur {
+          background: transparent;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          transition: all 200ms linear;
+        }
+        .img-loading {
+          min-height: 220px;
+          text-align: center;
+          vertical-align: middle;
+          position: relative;
+        }
+      }
+      .icon {
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        i {
+          font-size: 5rem;
+          color: #2e2e2e;
+        }
+      }
+    }
+    &:hover {
+      figure {
+        .repo-image {
+          .blur {
+            background: rgba(0, 0, 0, 0.06);
+          }
+          .icon {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

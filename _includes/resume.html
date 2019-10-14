@@ -7,7 +7,7 @@
       </div>
       <div class="row">
         <!-- Working History -->
-        <div class="working-history col-md-6 padding_15 padbot_30">
+        <div class="col-md-6">
           <ul class="timeline col-md-12 top_30">
             <li>
               <i class="fa fa-suitcase" aria-hidden="true"></i>
@@ -22,8 +22,8 @@
                 <h3>{{ working.position }}</h3>
                 <p>{{ working.nameOfOrg }}</p>
                 {% endif%}
+                <span>{{ working.duration }}</span>
               </div>
-              <span>{{ working.duration }}</span>
               <p class="little-text">
                 {{ working.description }}
               </p>
@@ -32,7 +32,7 @@
           </ul>
         </div>
         <!-- Education History -->
-        <div class="education-history col-md-6 padding_15 padbot_30">
+        <div class="col-md-6">
           <ul class="timeline col-md-12 top_30">
             <li>
               <i class="fa fa-graduation-cap" aria-hidden="true"></i>
@@ -41,8 +41,10 @@
             <!-- a work -->
             {% for education in site.data.profile.education %}
             <li>
-              <h3 class="line-title">{{ education.name }}</h3>
-              <span>{{ education.duration }}</span>
+              <div class="line-title">
+                <h3>{{ education.name }}</h3>
+                <span>{{ education.duration }}</span>
+              </div>
               <p class="little-text">
                 {{ education.description }}
               </p>
