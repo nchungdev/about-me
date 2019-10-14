@@ -9,7 +9,7 @@ $(document).ready(function() {
     checkIsAbout(hash);
     function setTabOnClickListener(tabs) {
       tabs.children("a").click(function(e) {
-        if(this.hash == ""){
+        if(this.hash == undefined){
           window.location.href = this.href;
           return;
         }
