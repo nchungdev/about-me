@@ -9,6 +9,10 @@ $(document).ready(function() {
     checkIsAbout(hash);
     function setTabOnClickListener(tabs) {
       tabs.children("a").click(function(e) {
+        if(this.hash == ""){
+          window.location.href = this.href;
+          return;
+        }
         e.preventDefault();
         checkIsAbout(this.hash);
         window.location.hash = this.hash;
